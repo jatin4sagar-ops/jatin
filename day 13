@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int num1, num2, result;
+    char op;
+
+    // Input two numbers and an operator
+    printf("Enter two numbers and an operator (+, -, *, /, %%): ");
+    scanf("%d %d %c", &num1, &num2, &op);
+
+    // Perform calculation based on operator
+    switch(op) {
+        case '+':
+            result = num1 + num2;
+            printf("%d\n", result);
+            break;
+        case '-':
+            result = num1 - num2;
+            printf("%d\n", result);
+            break;
+        case '*':
+            result = num1 * num2;
+            printf("%d\n", result);
+            break;
+        case '/':
+            if (num2 != 0) {

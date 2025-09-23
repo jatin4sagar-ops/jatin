@@ -1,0 +1,11 @@
+#include <stdio.h>
+#define PI 3.1416   // Define constant value of π
+
+int main() {
+    float radius, area, circumference;
+
+    // Input radius
+    printf("Enter radius: ");
+    scanf("%f", &radius);
+
+    // Calculate area and circumference

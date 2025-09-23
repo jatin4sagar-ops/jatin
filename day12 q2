@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int units;
+    int bill = 0;
+
+    // Input units consumed
+    printf("Enter number of units consumed: ");
+    scanf("%d", &units);
+
+    // Calculate bill based on slabs
+    if (units <= 100) {
+        bill = units * 5;*

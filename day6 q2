@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int num;
+
+    // Input integer
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    // Check positive, negative, or zero using nested if-else
+    if (num > 0) {
+        printf("Positive\n");
+    } else {
+        if (num < 0) {
+            printf("Negative\n");
+        } else {

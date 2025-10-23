@@ -1,0 +1,82 @@
+#include <stdio.h>
+
+int main() {
+    int n1, n2;
+
+  
+    printf("Enter the number of elements in the first array: ");
+    scanf("%d", &n1);
+    printf("Enter the number of elements in the second array: ");
+    scanf("%d", &n2);
+
+    int arr1[n1], arr2[n2], merged[n1 + n2];
+
+   
+    printf("Enter %d elements of the first array:\n", n1);
+    for(int i = 0; i < n1; i++) {
+        scanf("%d", &arr1[i]);
+    }
+
+   
+    printf("Enter %d elements of the second array:\n", n2);
+    for(int i = 0; i < n2; i++) {
+        scanf("%d", &arr2[i]);
+    }
+
+    
+    for(int i = 0; i < n1; i++) {
+        merged[i] = arr1[i];
+    }
+    for(int i = 0; i < n2; i++) {
+        merged[n1 + i] = arr2[i];
+    }
+
+  
+    printf("Merged array:\n");
+    for(int i = 0; i < n1 + n2; i++) {
+        printf("%d ", merged[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+
+Q2
+
+
+  #include <stdio.h>
+
+int main() {
+    long long n;
+    int count[10] = {0};
+
+    printf("Enter an integer number: ");
+    scanf("%lld", &n);
+
+    
+    if(n < 0) {
+        n = -n;
+    }
+
+    
+    while(n > 0) {
+        int digit = n % 10;
+        count[digit]++;
+        n /= 10;
+    }
+
+
+    int maxCount = count[0], digitWithMax = 0;
+    for(int i = 1; i < 10; i++) {
+        if(count[i] > maxCount) {
+            maxCount = count[i];
+            digitWithMax = i;
+        }
+    }
+
+    printf("The digit that occurs most frequently is %d (occurs %d times)\n", digitWithMax, maxCount);
+
+    return 0;
+}
+

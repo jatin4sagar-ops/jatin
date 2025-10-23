@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    printf("Factors of %d are: ", n);
+    for (i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            printf("%d ", i);
+        }
+    }
+
+    printf("\n");
+    return 0;
+}
+
+
+Q_2
+
+#include <stdio.h>
+
+int main() {
+    int a, b, tempA, tempB, hcf;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    tempA = a;
+    tempB = b;
+
+    
+
+    while (tempB != 0) {
+        int remainder = tempA % tempB;
+        tempA = tempB;
+        tempB = remainder;
+    }
+
+    hcf = tempA;
+    printf("HCF (GCD) of %d and %d is %d\n", a, b, hcf);
+
+    return 0;
+}

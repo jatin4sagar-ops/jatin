@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main() {
+    int n, binary[32], i = 0;  // array to store binary digits
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if (n == 0) {
+        printf("Binary: 0\n");
+        return 0;
+    }
+
+    while (n > 0) {
+        binary[i] = n % 2;  // store remainder (0 or 1)
+        n = n / 2;          // divide number by 2
+        i++;
+    }
+
+    printf("Binary: ");
+    for (int j = i - 1; j >= 0; j--) {  // print in reverse order
+        printf("%d", binary[j]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+
+Q-2
+
+
+#include <stdio.h>
+
+int main() {
+    int n, original, reversed = 0, remainder;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    original = n; r
+
+    while (n != 0) {
+        remainder = n % 10;               
+        reversed = reversed * 10 + remainder; // build reversed number
+        n = n / 10;                      
+    }
+
+    if (original == reversed)
+        printf("%d is a palindrome number.\n", original);
+    else
+        printf("%d is not a palindrome number.\n", original);
+
+    return 0;
+}

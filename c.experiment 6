@@ -1,0 +1,224 @@
+1.
+#include <stdio.h>
+#include <string.h>
+
+struct Book {
+    int book_id;
+    char title[100];
+    char author[100];
+    float price;
+};
+
+void printBookDetails(struct Book b) {
+    printf("Book Details:\n");
+    printf("Book ID   : %d\n", b.book_id);
+    printf("Title     : %s\n", b.title);
+    printf("Author    : %s\n", b.author);
+    printf("Price     : %.2f\n", b.price);
+}
+
+int main() {
+    struct Book b1;
+
+    b1.book_id = 1;
+    strcpy(b1.title, "Data Structures");
+    strcpy(b1.author, "R. S. Salaria");
+    b1.price = 350.75;
+
+    printBookDetails(b1);
+
+    return 0;
+}
+
+
+
+
+
+2.
+
+#include <stdio.h>
+
+struct student {
+    char name[50];
+    int roll_number;
+    float mark;
+};
+
+int main() {
+    struct student s1;
+
+    
+    printf("Enter student name: ");
+    fgets(s1.name, sizeof(s1.name), stdin);
+
+    printf("Enter roll number: ");
+    scanf("%d", &s1.roll_number);
+
+    printf("Enter mark: ");
+    scanf("%f", &s1.mark);
+
+    
+    printf("\nStudent Details:\n");
+    printf("Name        : %s", s1.name);    
+    printf("Roll Number : %d\n", s1.roll_number);
+    printf("Mark        : %.2f\n", s1.mark);
+
+    return 0;
+}
+
+
+
+
+3.
+
+
+
+#include <stdio.h>
+#include <string.h>
+
+struct Student {
+    int roll_no;
+    char fname[20];
+    char lname[20];
+};
+
+int main() {
+    struct Student s[5], temp;
+    int i, j;
+
+    
+    printf("Enter roll_no, fname, lname of 5 students:\n");
+    for(i = 0; i < 5; i++) {
+        printf("Student %d:\n", i + 1);
+        printf("Roll No: ");
+        scanf("%d", &s[i].roll_no);
+        printf("First Name: ");
+        scanf("%s", s[i].fname);
+        printf("Last Name: ");
+        scanf("%s", s[i].lname);
+    }
+
+   
+    for(i = 0; i < 4; i++) {
+        for(j = i + 1; j < 5; j++) {
+            if(s[i].roll_no > s[j].roll_no) {
+                temp = s[i];
+                s[i] = s[j];
+                s[j] = temp;
+            }
+        }
+    }
+
+   
+    printf("\nRecords in Ascending Order of Roll No:\n");
+    for(i = 0; i < 5; i++) {
+        printf("%d\t%s\t%s\n", s[i].roll_no, s[i].fname, s[i].lname);
+    }
+
+    return 0;
+}
+4.
+
+
+#include <stdio.h>
+#include <string.h>
+
+struct Employee {
+    char name[30];
+    char address[50];
+    int age;
+    float salary;
+};
+
+int main() {
+    struct Employee e[5], temp;
+    int i, j;
+    float sum = 0, avg;
+
+    printf("Enter name, address, age, salary of 5 employees:\n");
+
+   
+    for(i = 0; i < 5; i++) {
+        printf("\nEmployee %d:\n", i + 1);
+        printf("Name: ");
+        scanf("%s", e[i].name);
+        printf("Address: ");
+        scanf("%s", e[i].address);
+        printf("Age: ");
+        scanf("%d", &e[i].age);
+        printf("Salary: ");
+        scanf("%f", &e[i].salary);
+
+        sum += e[i].salary;
+    }
+
+   
+    avg = sum / 5;
+
+   e
+    for(i = 0; i < 4; i++) {
+        for(j = i + 1; j < 5; j++) {
+            if(strcmp(e[i].name, e[j].name) > 0) {
+                temp = e[i];
+                e[i] = e[j];
+                e[j] = temp;
+            }
+        }
+    }
+
+    // Display results
+    printf("\n--- Employee Details in Alphabetical Order ---\n");
+    for(i = 0; i < 5; i++) {
+        printf("\nName: %s\nAddress: %s\nAge: %d\nSalary: %.2f\n",
+               e[i].name, e[i].address, e[i].age, e[i].salary);
+    }
+
+    printf("\nAverage Salary = %.2f\n", avg);
+
+    return 0;
+}
+
+
+5.
+
+#include <stdio.h>
+
+struct date {
+    int day;
+    int month;
+    int year;
+};
+
+struct employee {
+    char name[30];
+    int id;
+    float salary;
+    struct date dob;   // Nested structure
+};
+
+int main() {
+    struct employee e;
+
+    // Reading employee details
+    printf("Enter employee name: ");
+    scanf("%s", e.name);
+
+    printf("Enter employee ID: ");
+    scanf("%d", &e.id);
+
+    printf("Enter salary: ");
+    scanf("%f", &e.salary);
+
+    printf("Enter date of birth (day month year): ");
+    scanf("%d %d %d", &e.dob.day, &e.dob.month, &e.dob.year);
+
+    // Displaying output
+    printf("\n--- Employee Details ---\n");
+    printf("Name: %s\n", e.name);
+    printf("ID: %d\n", e.id);
+    printf("Salary: %.2f\n", e.salary);
+    printf("Date of Birth: %02d-%02d-%04d\n", e.dob.day, e.dob.month, e.dob.year);
+
+    return 0;
+}
+
